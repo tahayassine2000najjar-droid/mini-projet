@@ -5,23 +5,26 @@ function addition(a,b){
     console.log(jam3)
    array.push(jam3)
 }
-function soustraction(){
+function soustraction(a,b){
     na9is= a-b;
-    console.log(na9is)
     array.push(na9is)
+    console.log(na9is)
+    
 }
 function multiplication(a,b){
    darb = a*b;
+      array.push(darb)
     console.log(darb)
-    array.push(darb)
+ 
 }
 function division(a,b){
     if(b===0){
         console.log(`error , division par 0`)
     }
      kisma= a/b;
+      array.push(kisma)
     console.log(kisma)
-    array.push(kisma)
+   
 }
 function factorielle(c){
     if (c<0){
@@ -33,16 +36,19 @@ function factorielle(c){
           fact*=i ;
            console.log(fact)
            array.push(fact)
+          
 }
 }
-function racine_carrée (c){
+function racine_carrée(c){
    if (c<0){
     console.log(`cannot sqrt negative number`)
     return;
    }
-  racine = Math.sqrt(c) ;
-      console.log(racine)
-     array.push(racine)
+  let racine = Math.sqrt(c) ;
+   console.log(racine)
+   array.push(racine)
+     
+    
 }
 
 function menu() {
@@ -58,31 +64,30 @@ function menu() {
             continue;
         }
     if(operator ==="sqrt" ||operator === "!"){
-           let unique =Number(prompt('entré un numero unique: '))
+           let c =Number(prompt('entré un numero unique: '))
    
     if(operator === "sqrt"){
-        racine_carrée(unique);
-     
-     }else{
-        if(operator === "!"){
-        factorielle(unique);
+        racine_carrée(c);
+         } 
+     if(operator === "!"){
+        factorielle(c);
          } 
      }  
-    }else if(["+","-","*","/"].includes(operator)) {
-        let number1 = Number(prompt('entré le 1er  numero : '))
-        let number2= Number(prompt('entré le 2éme numero : '))
+    else if(["+","-","*","/"].includes(operator)) {
+        let a = Number(prompt('entré le 1er  numero : '))
+        let b= Number(prompt('entré le 2éme numero : '))
         switch(operator){
     case"+":
-    addition(number1,number2);
+    addition(a,b);
     break;
     case "-":
-    soustraction(number1,number2)
+    soustraction(a,b)
     break;
      case"/":
-   division(number1,number2);
+   division(a,b);
     break;
     case"*":
-    multiplication(number1,number2);
+    multiplication(a,b);
     break;
       default:
       console.log(`error`)
@@ -92,3 +97,4 @@ function menu() {
          } 
   
 menu();
+        
